@@ -1,0 +1,42 @@
+# Hoisting in JavaScript
+
+- Hoisting is a behavior in JavaScript where variable and function declarations are moved to the top of their containing scope during code execution.
+- Hoisting means that even if you write code in a specific order, some parts of it, especially variable and function declarations, seem to get moved up a little bit behind the scenes.
+
+```js copy
+// Without hoisting
+console.log(x);
+var x = 5;
+
+// With hoisting
+var x; // Declaration is moved up
+console.log(x); // Now, x exists but is undefined
+x = 5; // Assignment happens here
+```
+
+- `var` declarations are hoisted and initialized with a value of undefined, const and let declarations are hoisted but not initialized.
+
+```js copy
+console.log(x); // Throws an error: Cannot access 'x' before initialization
+const x = 5;
+```
+
+- `const` declarations are hoisted, but they are not initialized with a value like var declarations are.
+
+```js copy
+// Example of var and let/const
+
+// using var
+console.log(a); // Outputs: undefined
+var a = 10;
+console.log(a); // Outputs: 10
+
+// using let
+console.log(b); // Throws an error: Cannot access 'b' before initialization
+let b = 20;
+console.log(b); // This line is not reached due to the error
+
+// using const
+console.log(x); // Throws an error: Cannot access 'x' before initialization
+const x = 5;
+```

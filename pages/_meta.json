@@ -1,7 +1,12 @@
 {
   "index": "Introduction",
   "another": "Another Page",
-  "advanced": "🟡 JavaScript",
+  "javascript": "📜 JavaScript",
+  "nodejs": "🐦 Node.js",
+  "blog": {
+    "title": "Blog",
+    "type": "page"
+  },
   "about": {
     "title": "About",
     "type": "page"
