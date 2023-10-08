@@ -3,6 +3,10 @@
   "another": "Another Page",
   "javascript": "📜 JavaScript",
   "nodejs": "🐦 Node.js",
+  "roadmap": {
+    "title": "Roadmap + Resources",
+    "type": "page"
+  },
   "blog": {
     "title": "Blog",
     "type": "page"
