@@ -1,0 +1,20 @@
+# What is a window object and where it comes from?
+
+- When a javascript program runs on the browser the javascript engine creates a `global context` along with at the global level, the `window` is created.
+
+  - Just like browsers the different engines create this `window` object.
+  - In the case of node also there is a `global object` created.
+
+  ```js showLineNumbers
+  this === window; // true
+  ```
+
+- If I put a variable and function in the global scope (not in a function). These are attached to the global object called `window`.
+
+```js showLineNumbers
+var a = 10;
+function b() {
+  var c = 20;
+}
+// a and b() function visible in window object
+```
