@@ -1,4 +1,6 @@
 {
   "hoisting": "1. Hoisting",
-  "windowandthis": "2. Window and this keyword"
+  "windowandthis": "2. Window and this keyword",
+  "lexicalenvironment": "3. Scope Chain, Scope & Lexical Environment",
+  "temporaldeadzone": "4. Let & const in JS, Temporal Dead Zone"
 }

@@ -1,0 +1,121 @@
+# Let & const in JS, Temporal Dead Zone
+
+## Let & const declaration are hoisted
+
+### Temporal Dead Zone
+
+- In JavaScript, the "temporal dead zone" refers to the period within a scope where a variable exists but cannot be accessed or used before its declaration. This behavior is specific to variables declared using the **`let`** and **`const`** keywords, which were introduced in ECMAScript 6 (ES6) to provide block-scoped variable declarations.
+- The phase from hoisting till it assigns or gets some values that phase is known as the temporal dead zone. **from line 1 to line 3 is in the temporal dead zone.**
+
+```js showLineNumbers
+console.log(myVar); // Throws a ReferenceError during the temporal dead zone
+let myVar = 10; // Variable declaration
+console.log(myVar); // Outputs 10
+```
+
+- In the case of var and let, var can re-declare the variable but let can not.
+
+```js showLineNumbers
+console.log("hello")
+//Due to the re-declaration of the let variable the code gets terminate
+// and doesn't move to the next line.
+let a = 0; ❌
+let a = 0; ❌
+
+
+// In case of var the re-declaration is possible
+console.log("hello")
+var a = 0; ✅
+var a = 0; ✅
+
+// In case of const
+// The initialization happen at that moment of declaration
+// The re-initialization doesn't happen after assigning a value in the const declaration
+
+const a = 10; // the rest of the concept for const is the same as let
+a = 100 ❌
+```
+
+## Error
+
+### Type Error
+
+- In JavaScript, a "TypeError" is a type of error that occurs when an operation is performed on a value of a type that is not appropriate for that operation. In other words, it indicates that a value does not have the expected type or structure for a particular operation to be executed successfully.
+
+```js showLineNumbers
+const a = 0;
+a = 0; //TypeError: Assignment to constant variable.
+```
+
+```js showLineNumbers
+1. Incorrect Function Invocation
+// Calling a function that doesn't exist or attempting to call an object as if it were a function.
+
+// Example of trying to call a non-existent function
+nonExistentFunction(); // Throws a TypeError
+
+// Example of calling an object as a function
+const myObject = {};
+myObject(); // Throws a TypeError
+
+2. Property Access on Non-Objects:
+// Trying to access a property or method of a value that is not an object or null.
+
+const num = 42;
+num.length; // Throws a TypeError, as numbers don't have a "length" property
+
+const nullValue = null;
+nullValue.property; // Throws a TypeError, as null is not an object
+
+3. Mismatched Data Types:
+// Performing operations on values that are of incompatible types.
+
+const str = "Hello";
+const num = 42;
+const result = str + num; // Concatenation of string and number, no TypeError
+const wrongResult = str - num; // Subtraction of string and number, TypeError
+
+4. Incorrect Usage of Built-in Objects:
+// Misusing built-in objects like Date or RegExp without following the appropriate syntax.
+
+const invalidDate = new Date("not a date"); // Creates an invalid Date object, may cause TypeError
+const invalidRegExp = new RegExp("["); // Throws a TypeError due to invalid regular expression
+
+5. Using Undefined Values:
+// Attempting to access properties or elements of undefined values.
+
+let myVar;
+console.log(myVar.property); // Throws a TypeError
+
+const myArray = [1, 2, 3];
+console.log(myArray[10]); // Undefined, no TypeError
+
+6. Using Null Pointer:
+// Trying to access properties or elements of null values.
+
+const myObject = null;
+console.log(myObject.property); // Throws a TypeError
+```
+
+### Syntax Error
+
+```js showLineNumbers
+const a; // SyntaxError: Missing initializer in const declaration
+let b = 10;
+let b = 10; // SyntaxError: Identifier 'b' has already been declared
+```
+
+### Reference Error
+
+```js showLineNumbers
+console.log(y); // ReferenceError: y is not defined
+let a = 10;
+
+console.log(a); // ReferenceError: Cannot access 'a' before initialization
+// because of a is in the temporal dead zone
+let a = 10;
+```
+
+## How To Avoid Temporal Dead Zone?
+
+- Push everything all of your declaration and initialization at the top.

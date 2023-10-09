@@ -1,0 +1,48 @@
+# Scope Chain, Scope & Lexical Environment
+
+## What is Scope?
+
+- Scope, where you can access specific variables or functions in our code.
+- The term "scope" refers to the context in which variables are declared and accessed.
+- It defines where a particular variable or function is visible and accessible within your code.
+
+```js showLineNumbers
+var globalVar = 10;
+
+function doSomething() {
+  console.log(globalVar); // Accessible here
+}
+
+console.log(globalVar); // Also accessible here
+```
+
+```js showLineNumbers
+function doSomething() {
+  var localVar = 20;
+  // localVar has local scope, accessible only inside this function
+  console.log(localVar);
+}
+
+doSomething(); // Outputs 20
+console.log(localVar); // Throws an error, localVar is not accessible here
+```
+
+## What is Lexical Environment?
+
+- The lexical environment is the local memory along with the lexical environment of its parent.
+
+```js showLineNumbers
+function a() {
+  var b = 10;
+  c();
+  function c() {}
+}
+
+a();
+console.log(b);
+```
+
+### What is Lexical?
+
+- The term lexical means, In hierarchy or in sequence.
+- From the above code, we can say that the `c(){...} function` lexically/physically sits inside `a(){...} function`. and same for `a(){..} function` lexically sits inside global scope.
