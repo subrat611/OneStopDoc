@@ -2,5 +2,6 @@
   "hoisting": "1. Hoisting",
   "windowandthis": "2. Window and this keyword",
   "lexicalenvironment": "3. Scope Chain, Scope & Lexical Environment",
-  "temporaldeadzone": "4. Let & const in JS, Temporal Dead Zone"
+  "temporaldeadzone": "4. Let & const in JS, Temporal Dead Zone",
+  "blockandshadowing": "5. Block Scope and Shadowing"
 }

@@ -1,0 +1,92 @@
+# Block Scope and Shadowing
+
+## What is a Block?
+
+- The block is defined by this `{}`.
+- Block is also known as a compound statement i.e. combining multiple statements into a group.
+- By grouping we can tell javascript to treat it as a single statement.
+
+```js showLineNumbers
+{
+  var a = 10;
+  console.log(a);
+}
+```
+
+## What is Block scope?
+
+- What all variables and functions we access inside the block `{}`.
+- The variable defined by `let` and `const` can not be accessed outside the function.
+
+```js showLineNumbers
+{
+  var a = 10;
+  let b = 20;
+  const c = 30;
+}
+```
+
+## What is Shadowing?
+
+- Shadowing in JavaScript occurs when a variable declared within a specific scope has the same name as a variable declared in a higher or outer scope.
+- When this happens, the inner variable "shadows" or takes precedence over the outer variable, effectively hiding it within that scope.
+- This means that when you use the variable name within that scope, JavaScript will prioritize the inner variable, and you won't be able to access the outer variable until you exit the scope where the shadowing occurs.
+
+```js showLineNumbers
+var x = 10; // Outer variable
+
+function myFunction() {
+  var x = 5; // Inner variable shadowing the outer 'x'
+  console.log(x); // This will print 5, not 10
+}
+
+myFunction();
+console.log(x); // This will print 10
+```
+
+- Shadowing is not only a concept of block it also behaves in the same way for function.
+
+Let's take another example
+
+```js showLineNumbers
+var a = 100;
+{
+  var a = 200;
+  console.log(a); // output: 200
+}
+console.log(a); // output: 200
+```
+
+- Here the `var` a (a = 200) inside the block is shadowing the outer variable a (a = 100).
+- In JavaScript, variable declarations using **`var`** are not block-scoped; they are function-scoped. This means that variables declared with **`var`** are hoisted to the top of their containing function or, if not inside a function, to the global scope. This behavior can lead to unexpected results when you declare a variable inside a block like above example.
+- In this code, both **`a`** declarations are in the same function scope, so they refer to the same variable. When you change the value of **`a`** inside the block, it affects the outer **`a`** as well because they share the same scope. That's why both **`console.log(a)`** statements output **`200`**.
+
+- For the let and const, a separate context is created.
+
+```js showLineNumbers
+var a = 100;
+{
+  let a = 200;
+  console.log(a); // output: 200
+}
+console.log(a); // output: 100
+```
+
+### Illegal shadowing
+
+```js showLineNumbers
+let a = 20;
+{
+  var a = 20;
+}
+```
+
+- Here the variable `a` defined by `let` is not shadow using `var.`
+- But the below code is valid.
+
+```js showLineNumbers
+var a = 20;
+{
+  let a = 20; // this a have its own scope
+}
+```
