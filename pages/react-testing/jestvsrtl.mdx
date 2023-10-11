@@ -1,0 +1,26 @@
+# Jest vs React Testing Library
+
+# Jest
+
+- Jest is a test runner that finds tests, runs the tests, determines whether the tests passed or failed, and reports it back in a human-readable manner.
+- **Type**: Jest is primarily a JavaScript testing framework.
+- **Testing Scope**: Jest is a comprehensive testing framework that can be used for a wide range of testing tasks, including unit testing, integration testing, and end-to-end testing. It's not limited to testing React applications; you can use it for testing any JavaScript code.
+- **Features**: Jest provides a variety of features, including assertion libraries, mocking utilities, test runners, and test runners.
+- **Snapshot Testing**: Jest includes snapshot testing, which allows you to capture snapshots of your components' rendered output and compare them to detect unintended changes.
+- **Mocking**: Jest has built-in mocking capabilities, making it easy to mock dependencies, functions, and modules for more isolated unit testing.
+- **Matchers**: Jest includes a range of built-in matchers to make assertions in your test cases.
+- **Test Runners**: Jest has its built-in test runner, which can parallelize test execution, improving performance.
+
+# React Testing Library
+
+- It is a JavaScript testing utility that provides virtual DOM for testing react components.
+- It provides a virtual DOM which we can use to interact with and verify the behavior of a react component.
+- The core library is called the DOM Testing library and the React testing library is simply a wrapper around this core library to test React applications more easily.
+- **Type**: React Testing Library is a testing utility library, not a testing framework.
+- **Testing Scope**: React Testing Library is focused specifically on testing React components and encourages a user-centric testing approach. It's best used for integration and end-to-end testing of React components and their behavior.
+- **Philosophy**: React Testing Library promotes a testing philosophy that emphasizes testing the application as a user would interact with it. This helps ensure that your tests are closer to real-world use cases.
+- **Queries**: It provides a set of utility functions, like **`getByLabelText`**, **`getByText`**, and **`fireEvent`**, to interact with and assert the behavior of components based on their text, labels, and user interactions.
+- **Avoids Implementation Details**: React Testing Library discourages testing implementation details, focusing on testing the component's behavior and user experience instead.
+- **No Test Runner**: React Testing Library doesn't include a test runner; it's designed to work with test runners like Jest. You can use it in combination with Jest for React testing.
+
+In practice, it's common to use both the Jest and React Testing Library together. Jest provides the testing framework and tools for running tests, handling assertions, and mocking, while React Testing Library provides the utilities for writing more user-focused and behavior-driven tests of React components.
