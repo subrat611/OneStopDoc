@@ -1,0 +1,54 @@
+# Closure
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/qikxEIxsXco?si=ENdbGI7QgISoWV3u"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen
+></iframe>
+
+## What is Closure?
+
+- Closure is a function bind together with it's lexical environment.
+- Function along with it's lexical scope forms a closure.
+
+> MDN
+>
+> A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
+
+>
+
+### Example
+
+```js showLineNumbers copy
+function parentFun() {
+  var a = 7;
+
+  function childFun() {
+    console.log(a);
+  }
+
+  childFun();
+}
+
+parentFun();
+```
+
+### Explanation
+
+- Inside `childFun` it form a closure with the variable which were part of `parentFun` lexical scope.
+
+## Use Cases
+
+- `Data Encapsulation:` Helps in creating private variables.
+- `Functional Programming:` Enables the creation of functions with behavior dependent on an enclosed scope.
+- Module Design Pattern
+- Currying
+- Memoize
+- Function like `once`
+- Maintaining state in async world
+- setTimeout
+- Iterators etc...
