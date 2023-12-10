@@ -52,3 +52,53 @@ parentFun();
 - Maintaining state in async world
 - setTimeout
 - Iterators etc...
+
+## setTimeout + closure interview questions
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/eBTBG4nda2A?si=EhkiUB9jhKRjfy7U"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen
+></iframe>
+
+## Question 1
+
+```js showLineNumbers copy
+function gotYou() {
+  var i = 1;
+
+  setTimeout(function () {
+    console.log(i);
+  }, 3000);
+
+  console.log("Got you function ends");
+}
+
+gotYou();
+```
+
+- What's the output?
+- Explain this code.
+
+## Question 2
+
+```js showLineNumbers copy
+function gotYou() {
+  for (var i = 1; i <= 5; i++) {
+    setTimeout(function () {
+      console.log(i);
+    }, i * 1000);
+  }
+
+  console.log("Got you function ends");
+}
+
+gotYou();
+```
+
+- What's the output?
+- Explain this code.
