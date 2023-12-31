@@ -1,8 +1,9 @@
 {
-  "hoisting": "1. Hoisting",
-  "windowandthis": "2. Window and this keyword",
-  "lexicalenvironment": "3. Scope Chain, Scope & Lexical Environment",
-  "temporaldeadzone": "4. Let & const in JS, Temporal Dead Zone",
-  "blockandshadowing": "5. Block Scope and Shadowing",
-  "closure": "6. Closure"
+  "howjavascriptcodeexecuted": "1. How JavaScript Code is executed? Call Stack?",
+  "hoisting": "2. Hoisting",
+  "windowandthis": "3. Window and this keyword",
+  "lexicalenvironment": "4. Scope Chain, Scope & Lexical Environment",
+  "temporaldeadzone": "5. Let & const in JS, Temporal Dead Zone",
+  "blockandshadowing": "6. Block Scope and Shadowing",
+  "closure": "7. Closure"
 }
