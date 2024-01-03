@@ -1,0 +1,89 @@
+# bind()
+
+- bind() method bind the method with the object that point to this.
+- The primary purpose of the bind() method is to create a new function where this is explicitly set to a specified object. This ensures that when the new function is invoked, it behaves as if it's a method of that object.
+- It returns a new function with the specified this value.
+
+```js showLineNumbers
+const greet = function () {
+  console.log(`Hello ${this.firstName}`);
+};
+
+const name = {
+  firstName: "Jhon",
+};
+
+const greetUser = greet.bind(name);
+
+greetUser(); // Hello Jhon
+```
+
+But what if the greet is an arrow function
+
+```js showLineNumbers
+const greet = () => {
+  console.log(`Hello ${this.firstName}`);
+};
+
+const name = {
+  firstName: "Jhon",
+};
+
+const greetUser = greet.bind(name);
+
+greetUser(); // Hello undefined
+```
+
+# Polyfill
+
+```js showLineNumbers
+// create an object
+let name = {
+  firstName: "Jivan",
+  age: 30,
+};
+
+// create a function printUserInfo
+const printUserInfo = function () {
+  console.log(`user name is ${this.firstName} and age is ${this.age}`);
+};
+
+// create your own bindPolyfill
+// to access by all functions we put it in Function.prototype
+Function.prototype.bindPolyfill = function (...args) {
+  let parentFn = this; // printUserInfo
+
+  // extract the argument passed after the object
+  let params = args.slice(1); // slice returns an array
+
+  return function (...args2) {
+    // args[0] -> object(name)
+    // parentFn.call(args[0]);
+
+    // for extra params we use apply method
+    // parentFn.apply(args[0], params);
+
+    // for extra argument to printUser3()
+    parentFn.apply(args[0], [...params, ...args2]);
+  };
+};
+
+let printUser1 = printUserInfo.bindPolyfill(name);
+printUser1();
+
+// but what if I want pass arguments like in bind(name, "hello", "Kolkata")
+let printUser2 = printUserInfo.bindPolyfill(name, "Kolkata");
+printUser2();
+
+// but what if I pass argument to printUser3()
+
+// create another printUserInfo2 function
+const printUserInfo2 = function (city, state) {
+  console.log(
+    `user name is ${this.firstName} and age is ${this.age} from city ${city}, state of ${state}`
+  );
+};
+
+let printUser3 = printUserInfo2.bindPolyfill(name, "Kolkata");
+printUser3("West Bengal");
+```
