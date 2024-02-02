@@ -1,0 +1,69 @@
+# First Class Functions
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/SHINoHxvTso?si=0SYWrAFjztYsDRuU"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen
+></iframe>
+
+## What is function statement?
+
+```js showLineNumbers copy
+function fn() {
+  console.log("fn function called");
+}
+```
+
+## What is function expression?
+
+```js showLineNumbers copy
+let b = function () {
+  console.log("fn function called");
+};
+```
+
+- Difference between `function statement` and `function expression` is the `hoisting`.
+- If you call these 2 functions before creating, the value will you get a `ReferenceError`.
+
+```js showLineNumbers copy
+fn(); // fn function called
+b(); // cannot access 'b' before initialization
+
+function fn() {
+  console.log("fn function called");
+}
+
+let b = function () {
+  console.log("b function called");
+};
+```
+
+## What is declaration?
+
+```js showLineNumbers copy
+let b = function () {
+  console.log("fn function called");
+};
+```
+
+## What is anonymous function?
+
+- When function use as a value, we can use it to assign it to a variable.
+
+```js showLineNumbers copy
+let b = function () {
+  console.log("fn function called");
+};
+```
+
+## What are first class functions or functions are first class citizens?
+
+Functions in JavaScript
+
+- assign to a variable.
+- pass as an argument to other functions.
+- return from a function.
