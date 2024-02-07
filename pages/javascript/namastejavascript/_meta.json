@@ -7,5 +7,6 @@
   "blockandshadowing": "6. Block Scope and Shadowing",
   "closure": "7. Closure",
   "firstclassfunctions": "8. First Class Functions",
-  "callbackfunctions": "9. Callback Functions"
+  "callbackfunctions": "9. Callback Functions",
+  "asynchronousjavaScriptandeventloop": "10. Asynchronous JavaScript & Event Loop"
 }
