@@ -8,5 +8,6 @@
   "closure": "7. Closure",
   "firstclassfunctions": "8. First Class Functions",
   "callbackfunctions": "9. Callback Functions",
-  "asynchronousjavaScriptandeventloop": "10. Asynchronous JavaScript & Event Loop"
+  "asynchronousjavaScriptandeventloop": "10. Asynchronous JavaScript & Event Loop",
+  "jsengine": "11. JS Engine"
 }
