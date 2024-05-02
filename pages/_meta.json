@@ -2,5 +2,6 @@
   "index": "Introduction",
   "javascript": "📜 JavaScript",
   "solid-principles": "SOLID Principles",
-  "react-testing": "🧪 React Testing"
+  "react-testing": "🧪 React Testing",
+  "vuejs-patterns": "Vue.js Patterns"
 }
