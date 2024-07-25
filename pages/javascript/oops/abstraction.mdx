@@ -1,0 +1,41 @@
+# Abstraction
+
+- Abstraction involves hiding the complex implementation details and showing only the essential features of the object.
+- It helps in reducing programming complexity and effort.
+
+Abstraction can be achieved by using interfaces and abstract classes. While JavaScript does not have built-in support for abstract classes, it can be simulated using normal classes.
+
+```js showLineNumbers
+class Animal {
+  constructor(name) {
+    if (this.constructor === Animal) {
+      throw new Error(
+        'Abstract class "Animal" cannot be instantiated directly.'
+      );
+    }
+    this.name = name;
+  }
+
+  speak() {
+    throw new Error('Method "speak()" must be implemented.');
+  }
+}
+
+class Dog extends Animal {
+  speak() {
+    console.log(`${this.name} barks.`);
+  }
+}
+
+class Cat extends Animal {
+  speak() {
+    console.log(`${this.name} meows.`);
+  }
+}
+
+const dog = new Dog("Rex");
+const cat = new Cat("Whiskers");
+
+dog.speak(); // Rex barks.
+cat.speak(); // Whiskers meows.
+```

@@ -1,0 +1,59 @@
+# Inheritance
+
+- Inheritance is a mechanism where a new class inherits the properties and methods of an existing class.
+- This allows for code reusability and the creation of a hierarchical relationship between classes.
+
+## Using Prototypes (Pre-ES6):
+
+```js showLineNumbers
+function Animal(name) {
+  this.name = name;
+}
+
+Animal.prototype.speak = function () {
+  console.log(`${this.name} makes a sound.`);
+};
+
+function Dog(name, breed) {
+  Animal.call(this, name); // Call the parent constructor
+  this.breed = breed;
+}
+
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+
+Dog.prototype.speak = function () {
+  console.log(`${this.name} barks.`);
+};
+
+const dog = new Dog("Rex", "Golden Retriever");
+dog.speak(); // Rex barks.
+```
+
+## Using ES6 Classes:
+
+```js showLineNumbers
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log(`${this.name} makes a sound.`);
+  }
+}
+
+class Dog extends Animal {
+  constructor(name, breed) {
+    super(name); // Call the parent constructor
+    this.breed = breed;
+  }
+
+  speak() {
+    console.log(`${this.name} barks.`);
+  }
+}
+
+const dog = new Dog("Rex", "Golden Retriever");
+dog.speak(); // Rex barks.
+```

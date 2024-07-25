@@ -1,0 +1,73 @@
+# Encapsulation
+
+- Encapsulation is the mechanism of hiding the internal state of an object and requiring all interaction to be performed through an object's methods.
+- This helps to protect the integrity of the data and prevents unauthorized access.
+
+In JavaScript, encapsulation can be achieved using closures and the class syntax introduced in ES6.
+
+## Using Closures
+
+```js showLineNumbers
+function Person(name, age) {
+  let _name = name; // private variable
+  let _age = age; // private variable
+
+  return {
+    getName: function () {
+      return _name;
+    },
+    getAge: function () {
+      return _age;
+    },
+    setAge: function (newAge) {
+      if (newAge > 0) {
+        _age = newAge;
+      } else {
+        console.log("Age must be positive.");
+      }
+    },
+  };
+}
+
+const person = Person("John", 30);
+console.log(person.getName()); // John
+console.log(person.getAge()); // 30
+person.setAge(31);
+console.log(person.getAge()); // 31
+```
+
+## Using ES6 Classes
+
+```js showLineNumbers
+class Person {
+  #name; // private field
+  #age; // private field
+
+  constructor(name, age) {
+    this.#name = name;
+    this.#age = age;
+  }
+
+  getName() {
+    return this.#name;
+  }
+
+  getAge() {
+    return this.#age;
+  }
+
+  setAge(newAge) {
+    if (newAge > 0) {
+      this.#age = newAge;
+    } else {
+      console.log("Age must be positive.");
+    }
+  }
+}
+
+const person = new Person("John", 30);
+console.log(person.getName()); // John
+console.log(person.getAge()); // 30
+person.setAge(31);
+console.log(person.getAge()); // 31
+```
