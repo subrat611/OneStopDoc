@@ -1,13 +1,14 @@
 {
-  "howjavascriptcodeexecuted": "1. How JavaScript Code is executed? Call Stack?",
-  "hoisting": "2. Hoisting",
-  "windowandthis": "3. Window and this keyword",
-  "lexicalenvironment": "4. Scope Chain, Scope & Lexical Environment",
-  "temporaldeadzone": "5. Let & const in JS, Temporal Dead Zone",
-  "blockandshadowing": "6. Block Scope and Shadowing",
-  "closure": "7. Closure",
-  "firstclassfunctions": "8. First Class Functions",
-  "callbackfunctions": "9. Callback Functions",
-  "asynchronousjavaScriptandeventloop": "10. Asynchronous JavaScript & Event Loop",
-  "jsengine": "11. JS Engine"
+  "howjavascriptworks": "1. How JavaScript Works & Execution Context",
+  "howjavascriptcodeexecuted": "2. How JavaScript Code is executed? Call Stack?",
+  "hoisting": "3. Hoisting",
+  "windowandthis": "4. Window and this keyword",
+  "lexicalenvironment": "5. Scope Chain, Scope & Lexical Environment",
+  "temporaldeadzone": "6. Let & const in JS, Temporal Dead Zone",
+  "blockandshadowing": "7. Block Scope and Shadowing",
+  "closure": "8. Closure",
+  "firstclassfunctions": "9. First Class Functions",
+  "callbackfunctions": "10. Callback Functions",
+  "asynchronousjavaScriptandeventloop": "11. Asynchronous JavaScript & Event Loop",
+  "jsengine": "12. JS Engine"
 }
